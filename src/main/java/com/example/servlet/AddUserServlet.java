@@ -24,10 +24,11 @@ public class AddUserServlet extends HttpServlet {
         req.setAttribute("user", user);
 
         getServletContext().getRequestDispatcher("/jsp/add.jsp").forward(req, resp);
+
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/jsp/add.jsp").include(req, resp);
+        getServletContext().getRequestDispatcher("/jsp/add.jsp").forward(req, resp);
     }
 }
