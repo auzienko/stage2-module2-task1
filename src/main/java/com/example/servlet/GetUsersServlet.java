@@ -19,6 +19,8 @@ public class GetUsersServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Set<User> users = Warehouse.getInstance().getUsers();
         request.setAttribute("users", users);
-        request.getServletContext().getRequestDispatcher("/jsp/users.jsp").forward(request, response);
+
+        request.getRequestDispatcher("/jsp/users.jsp")
+                .forward(request, response);
     }
 }

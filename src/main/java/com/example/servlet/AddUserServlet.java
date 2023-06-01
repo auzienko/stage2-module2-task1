@@ -23,14 +23,15 @@ public class AddUserServlet extends HttpServlet {
         warehouse.addUser(user);
         request.setAttribute("user", user);
 
-
-        request.getServletContext().getRequestDispatcher("/jsp/add.jsp")
+        request.getRequestDispatcher("/jsp/add.jsp")
                 .forward(request, response);
 
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getServletContext().getRequestDispatcher("/jsp/add.jsp").forward(request, response);
+
+        request.getRequestDispatcher("/jsp/add.jsp")
+                .forward(request, response);
     }
 }
